@@ -41,3 +41,12 @@ document.querySelector("h1").onmouseover = event => {
     iteration += 1 / 3;
   }, 30);
 }
+
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
+var randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+blob.style.backgroundColor = "#"+randomColor;
+setInterval(
+  function () {
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    blob.style.background = "#"+randomColor;
+  },3000);
