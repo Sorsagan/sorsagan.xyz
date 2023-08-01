@@ -1,11 +1,3 @@
-// Function to delete the "__gads" cookie
-function deleteGadsCookie() {
-  // Set the expiration date of the cookie to the past
-  document.cookie = "__gads=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-}
-
-// Call the function to delete the "__gads" cookie
-deleteGadsCookie();
 /* -- Glow effect -- */
 
 const blob = document.getElementById("blob");
