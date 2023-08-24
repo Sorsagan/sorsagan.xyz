@@ -19,19 +19,6 @@
             <a class="label" href="index.html">Back</a>
         </div>
     </div>
-  
-    <script>    
-  fetch('/bot-status')
-    .then(response => response.json())
-    .then(data => {
-        const botStatus = data.status;
-        // Update your website's UI based on the bot's status
-    })
-    .catch(error => {
-        console.error('Error fetching bot status:', error);
-    });
-      </script>
-    
     <script src="gallery.js"></script>
 </body>
 </html>
