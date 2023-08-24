@@ -26,7 +26,6 @@
             const response = await fetch('/get-bot-status'); // Send request to your server
             const data = await response.json();
             document.getElementById('botStatus').textContent = data.instant_invite ? 'Online' : 'Offline';
-            console.log(document.getElementById('botStatus').textContent)
           } catch (error) {
             console.error('Error fetching bot status:', error);
           }
