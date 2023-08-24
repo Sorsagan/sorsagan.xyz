@@ -12,7 +12,6 @@ app.get('/get-bot-status', async (req, res) => {
     const response = await fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}/widget.json`);
     const data = await response.json();
     res.json(data);
-    console.log(res.json(data))
   } catch (error) {
     res.status(500).json({ error: 'Error fetching bot statu s' });
   }
