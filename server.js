@@ -1,25 +1,16 @@
 const express = require('express');
-const fetch = require('node-fetch-cjs');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
-const GUILD_ID = process.env.GUILD_ID;
+const { Client } = require('discord.js');
 
-app.use(express.static('public')); // Serve static files (e.g., HTML, JS) from the 'public' folder
+const bot = new Client();
+const BOT_TOKEN = process.env.BOT_TOKEN;
 
-app.get('/get-bot-status', async (req, res) => {
-  try {
-    const response = await fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}/widget.json`);
-    const data = await response.text(); // Get the raw response as text
-    console.log(data); // Log the response
-    res.send(data); // Return the raw response for debugging purposes
-  } catch (error) {
-    res.status(500).json({ error: 'Error fetching bot status' });
-  }
+bot.login(BOT_TOKEN);
+
+app.get('/bot-status', (req, res) => {
+    res.json({ status: bot.user.presence.status });
 });
 
-
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 });
