@@ -10,12 +10,14 @@ app.use(express.static('public')); // Serve static files (e.g., HTML, JS) from t
 app.get('/get-bot-status', async (req, res) => {
   try {
     const response = await fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}/widget.json`);
-    const data = await response.json();
-    res.json(data);
+    const data = await response.text(); // Get the raw response as text
+    console.log(data); // Log the response
+    res.json(data); // Return the raw response for debugging purposes
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching bot statu s' });
+    res.status(500).json({ error: 'Error fetching bot status' });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
