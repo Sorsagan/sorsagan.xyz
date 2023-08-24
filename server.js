@@ -8,6 +8,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 bot.login(BOT_TOKEN);
 
 app.get('/bot-status', (req, res) => {
+  console.log({ status: bot.user.presence.status })
     res.json({ status: bot.user.presence.status });
 });
 
