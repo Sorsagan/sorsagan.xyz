@@ -3,7 +3,7 @@ const fetch = require('node-fetch-cjs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const GUILD_ID = '882383171323314186';
+const GUILD_ID = process.env.GUILD_ID;
 
 app.use(express.static('public')); // Serve static files (e.g., HTML, JS) from the 'public' folder
 
