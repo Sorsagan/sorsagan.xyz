@@ -1,100 +1,143 @@
 body {
-    background-color: rgb(20, 20, 20);
-    height: 100vh;
-    margin: 0rem;
-    overflow: hidden; 
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  margin: 0rem;
+  overflow: hidden; 
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
   }
   
-  @keyframes rotate {
-    from {
-      rotate: 0deg;
-    }
-    
-    50% {
-      scale: 1 1.5;
-    }
-    
-    to {
-      rotate: 360deg;
-    }
+  50% {
+    scale: 1 1.5;
   }
   
-  #blob {
-    background-color: white;
-    height: 28vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 50%;
-    background: linear-gradient(to right, rgb(165, 164, 163), rgb(219, 61, 159));
-    animation: rotate 20s infinite;
-    opacity: 0.8;
+  to {
+    rotate: 360deg;
   }
-  
-  #blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    backdrop-filter: blur(12vmax);
-  }
-  
-  h1 {
-    font-family: 'Space Mono', monospace;
-    font-size: clamp(3rem, 10vw, 10rem);
-    color: white;
-    padding: 0rem clamp(1rem, 2vw, 3rem);
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
-    margin: 0rem;
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    translate: -50% -50%;
-    z-index: 3;
-  }
-  
-  /* -- Links -- */
-  
-  #links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-    padding: 1rem;
-  }
-  
-  .meta-link {
-    display: inline-block;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .meta-link > :is(span, a) {
-    font-family: "Rubik", sans-serif;
-    color: white;
-    transition: 0.4s;
-  }
-  
-  .meta-link > .label {
-    width: 100px; 
-    text-align: left;
-  }
-  
-  .meta-link > a {
-    text-decoration: none;
-    outline: none;
-  }
-  
-  .meta-link > a:is(:hover, :focus) {
-    color: rgba(255, 255, 255, 0.6); 
-  }
-  
-  .meta-link > a > i {
-    height: 1rem;
-    line-height: 1rem;
-  }
+}
+
+#blob {
+  background-color: white;
+  height: 28vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(165, 164, 163), rgb(219, 61, 159));
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(12vmax);
+}
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  margin: 0rem;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  translate: -50% -50%;
+  z-index: 3;
+}
+
+p {
+  font-family: "Space Mono", monospace;
+  font-size: clamp(2.5rem, 1vw, 1rem);
+  color: white;
+  padding: 3rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  margin: 0rem;
+  position: relative;
+  left: 50%;
+  top: 40%;
+  translate: -50% -50%;
+  word-wrap: normal;
+  z-index: 3;
+}
+#commandContainer {
+  font-family: "Space Mono", monospace;
+  font-size: clamp(2.5rem, 1vw, 1rem);
+  color: white;
+  padding: 3rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  margin: 0rem;
+  position: relative;
+  left: 50%;
+  top: 40%;
+  translate: -50% -50%;
+  word-wrap: normal;
+  z-index: 3;
+}
+
+#messageContainer {
+  font-family: "Space Mono", monospace;
+  font-size: clamp(2.5rem, 1vw, 1rem);
+  color: white;
+  padding: 3rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  margin: 0rem;
+  position: relative;
+  left: 50%;
+  top: 40%;
+  translate: -50% -50%;
+  word-wrap: normal;
+  z-index: 3;
+}
+/* -- Links -- */
+
+#links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.meta-link {
+  display: inline-block;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-link > :is(span, a) {
+  font-family: "Rubik", sans-serif;
+  color: white;
+  transition: 0.4s;
+}
+
+.meta-link > .label {
+  width: 100px; 
+  text-align: left;
+}
+
+.meta-link > a {
+  text-decoration: none;
+  outline: none;
+}
+
+.meta-link > a:is(:hover, :focus) {
+  color: rgba(255, 255, 255, 0.6); 
+}
+
+.meta-link > a > i {
+  height: 1rem;
+  line-height: 1rem;
+}
