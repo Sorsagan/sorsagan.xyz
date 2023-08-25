@@ -10,10 +10,26 @@
 <body>
     <div id="blob"></div>
     <div id="blur"></div>
-  
-    <!-- Display bot status -->
-    <h1>Status: <span id="botStatus">Loading...</span></h1>
 
+    <button id="triggerButton">Trigger Command</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const triggerButton = document.getElementById('triggerButton');
+
+  triggerButton.addEventListener('click', () => {
+    fetch('/trigger-command')  // Replace with the actual URL of your server
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.message);  // Display the server response in the console
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+});
+
+</script>
     <div id="links">
         <div class="meta-link">  
             <a class="label" href="index.html">Back</a>
