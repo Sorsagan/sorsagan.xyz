@@ -17,16 +17,16 @@
     document.addEventListener('DOMContentLoaded', () => {
   const triggerButton = document.getElementById('triggerButton');
 
-  triggerButton.addEventListener('click', () => {
-    fetch('/trigger-command')  // Replace with the actual URL of your server
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.message);  // Display the server response in the console
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  });
+  triggerButton.addEventListener('click', async () => {
+  try {
+    const response = await fetch('/trigger-command');
+    const data = await response.json();
+    
+    console.log(data.message);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
 });
 
 </script>
