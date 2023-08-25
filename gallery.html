@@ -12,24 +12,7 @@
     <div id="blur"></div>
 
     <button id="triggerButton">Trigger Command</button>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const triggerButton = document.getElementById('triggerButton');
-
-  triggerButton.addEventListener('click', async () => {
-  try {
-    const response = await fetch('/trigger-command');
-    const data = await response.json();
     
-    console.log(data.message);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-});
-});
-
-</script>
     <div id="links">
         <div class="meta-link">  
             <a class="label" href="index.html">Back</a>
